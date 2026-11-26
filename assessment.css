@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+
+:root {
+  color-scheme: light;
+  --ink: #29334a;
+  --muted: #75809a;
+  --blue: #596de0;
+  --blue-dark: #4658c5;
+  --line: #e7eaf4;
+  --paper: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 50% 0%, #e6edff 0, #f4f7ff 42%, #f8f8fc 100%);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+button, input { font: inherit; }
+.page-shell { width: min(100% - 36px, 650px); margin: 0 auto; padding: 24px 0 36px; }
+.site-header { display: flex; align-items: center; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 700; }
+.brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 12px; color: #566bd9; background: #e2e9ff; font-size: 19px; }
+.hero { padding: 64px 0 30px; text-align: center; }
+.eyebrow { margin: 0 0 12px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .2em; }
+h1 { margin: 0; font-size: clamp(28px, 6vw, 39px); line-height: 1.4; letter-spacing: .02em; }
+.lead { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.quiz-card { padding: 26px; border: 1px solid #edf0f8; border-radius: 20px; background: var(--paper); box-shadow: 0 14px 36px #40528512; }
+.input-label { display: block; margin-bottom: 10px; font-size: 13px; font-weight: 700; }
+.input-row { display: flex; gap: 10px; }
+input { min-width: 0; flex: 1; height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 12px; outline: none; background: #fcfcff; color: var(--ink); }
+input::placeholder { color: #aab1c2; }
+input:focus { border-color: #8797ed; box-shadow: 0 0 0 3px #edf0ff; }
+button { min-height: 48px; padding: 0 19px; border: 0; border-radius: 12px; color: #fff; background: var(--blue); font-weight: 700; cursor: pointer; transition: background .18s, transform .18s; }
+button:hover { background: var(--blue-dark); transform: translateY(-1px); }
+button:focus-visible, a:focus-visible { outline: 3px solid #aeb9ff; outline-offset: 3px; }
+.small-note { margin: 10px 0 0; color: #929bb0; font-size: 11px; }
+#result-area:not(:empty) { margin-top: 18px; }
+.result-card { overflow: hidden; border: 1px solid #e8ebfa; border-radius: 20px; background: var(--paper); box-shadow: 0 14px 36px #40528512; animation: appear .28s ease-out; }
+.result-top { display: flex; align-items: center; gap: 12px; padding: 17px 22px; color: #fff; background: linear-gradient(110deg, #6679e6, #8290ed); }
+.result-sparkle { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 13px; color: #fff3c4; background: #ffffff25; font-size: 23px; }
+.result-kicker { margin: 0 0 3px; color: #e8eaff; font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+.result-heading { margin: 0; font-size: 15px; }
+.result-body { padding: 22px; }
+.result-text { margin: 0; color: #414b63; font-size: 15px; line-height: 1.9; }
+.result-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.retry-button { min-height: 42px; padding: 0 16px; color: var(--blue); background: #eef0ff; font-size: 12px; }
+.retry-button:hover { color: #fff; background: var(--blue); }
+.share-link { display: inline-flex; min-height: 42px; align-items: center; padding: 0 15px; border: 1px solid var(--line); border-radius: 12px; color: #5f6980; text-decoration: none; font-size: 12px; font-weight: 700; }
+.share-link:hover { border-color: #aeb8ed; color: var(--blue); }
+.page-foot { margin: 26px 0 0; color: #99a1b2; text-align: center; font-size: 11px; }
+@keyframes appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 480px) {
+  .page-shell { width: min(100% - 28px, 650px); padding-top: 18px; }
+  .hero { padding: 52px 0 24px; }
+  .lead { font-size: 13px; }
+  .quiz-card { padding: 20px; }
+  .input-row { flex-direction: column; }
+  .input-row button { width: 100%; }
+  .result-body { padding: 19px; }
+  .result-text { font-size: 14px; }
+}
